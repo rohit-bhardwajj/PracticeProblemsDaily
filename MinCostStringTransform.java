@@ -1,3 +1,4 @@
+// find min cost of making string a equal to string b , swapping takes 0 cost , appending new char takes 1 cost 
 import java.util.*;
 public class MinCostStringTransform {
     public static int mincost(String a ,String b){
