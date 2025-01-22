@@ -1,6 +1,7 @@
+//accenture prblm 2
 import java.util.*;
 
-public class MyClass {
+public class balfruits {
 
     static int balancefruits(int a, int m, int rs) {
         if (m == a) {
@@ -18,7 +19,7 @@ public class MyClass {
 
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
-        MyClass obj = new MyClass();
+        balfruits obj = new balfruits();
 
         System.out.println("Enter number of Mangoes");
         int m = sc.nextInt();

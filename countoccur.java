@@ -1,6 +1,7 @@
+//accenture 4th prblm
 import java.util.Scanner;
 
-public class Main {
+public class countoccur{
 
     public static int CountDigitOccurrences(int l, int u, int x) {
         int count = 0;
@@ -28,5 +29,6 @@ public class Main {
 
         int res = CountDigitOccurrences(l, u, x);
         System.out.println("Result is : " + res);
+        sc.close();
     }
 }
