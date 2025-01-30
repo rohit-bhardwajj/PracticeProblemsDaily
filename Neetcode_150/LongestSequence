@@ -1,3 +1,4 @@
+//optimized approach
 class Solution {
     public int longestConsecutive(int[] nums) {
         if(nums.length==0) return 0;
@@ -7,24 +8,52 @@ class Solution {
         for(int n:nums){
             set.add(n);
         }
-        int ans[] = new int[set.size()];
-        int index = 0;
+       
         for(int n:set){
-            ans[index++] = n;
-        }
-        Arrays.sort(ans);
-        for(int i=0;i<ans.length-1;i++){
-            int current = ans[i];
-            int next = ans[i+1];
-            if(next == current+1){
-                currentCount++;
+            if(set.contains(n-1)){
+                continue;
             }
             else{
-                maxCount = Math.max(currentCount,maxCount);
-                currentCount = 1;
+                currentCount=1;
+                while(set.contains(n+1)){
+                    currentCount++;
+                    n++;
+                }
+                maxCount = Math.max(maxCount,currentCount);
             }
         }
-                maxCount = Math.max(currentCount,maxCount);
+                
         return maxCount;
     }
 }
+//bruteForce
+// class Solution {
+//     public int longestConsecutive(int[] nums) {
+//         if(nums.length==0) return 0;
+//         Set<Integer> set = new HashSet<>();
+//         int maxCount = 0;
+//         int currentCount = 1;
+//         for(int n:nums){
+//             set.add(n);
+//         }
+//         int ans[] = new int[set.size()];
+//         int index = 0;
+//         for(int n:set){
+//             ans[index++] = n;
+//         }
+//         Arrays.sort(ans);
+//         for(int i=0;i<ans.length-1;i++){
+//             int current = ans[i];
+//             int next = ans[i+1];
+//             if(next == current+1){
+//                 currentCount++;
+//             }
+//             else{
+//                 maxCount = Math.max(currentCount,maxCount);
+//                 currentCount = 1;
+//             }
+//         }
+//                 maxCount = Math.max(currentCount,maxCount);
+//         return maxCount;
+//     }
+// }
