@@ -1,4 +1,22 @@
-//optimal solution
+// optimal approach
+class Solution {
+    public int missingNumber(int[] nums) {
+        int xor1 = 0;
+        for(int i=0;i<=nums.length;i++){
+           xor1 = xor1^i;
+        }
+        int xor2 = 0;
+        for(int i=0;i<nums.length;i++){
+           xor2 = xor2^nums[i];
+        }
+// xor1 eg= 1^2^3^4^5^6
+// xor2 eg= 1^2^3^4^6 ,xor1^xor2= will result in 0ing 
+// of similar numbers like 1^1 = 0 ,so it'll endup giving the missing number
+        return xor1^xor2; // 
+    }
+}
+
+//good approach
 class Solution {
     public int missingNumber(int[] nums) {
         int n = nums.length;
